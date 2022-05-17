@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.videoapp.splashScreenFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/Splash_Screen" >
+        <action
+            android:id="@+id/action_startFragment_to_entryFragment"
+            app:destination="@id/entryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entryFragment"
+        android:name="com.example.videoapp.EntryFragment"
+        android:label="fragment_entry"
+        tools:layout="@layout/fragment_entry" >
+        <action
+            android:id="@+id/action_entryFragment_to_registrateFragment"
+            app:destination="@id/registrateFragment" />
+        <action
+            android:id="@+id/action_entryFragment_to_singUpFragment"
+            app:destination="@id/singUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrateFragment"
+        android:name="com.example.videoapp.RegistrateFragment"
+        android:label="fragment_registrate"
+        tools:layout="@layout/fragment_registrate" />
+    <fragment
+        android:id="@+id/singUpFragment"
+        android:name="com.example.videoapp.singUpFragment"
+        android:label="fragment_sing_up"
+        tools:layout="@layout/fragment_sing_up" />
+</navigation>
