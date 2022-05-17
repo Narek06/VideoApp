@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:padding="50dp"
     tools:context=".singUpFragment">
 
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.19" />
 
     <TextView
         android:id="@+id/SingUp_Tv"
@@ -24,95 +25,107 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <EditText
+        android:id="@+id/edt_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:autofillHints="name"
+        android:background="@drawable/edt_style"
+        android:drawableStart="@drawable/icon_user"
+        android:gravity="center"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:maxLength="30"
+        android:paddingHorizontal="13dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="#9A818181"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SingUp_Tv"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/edt_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:background="@drawable/edt_style"
+        android:drawableStart="@drawable/icon_user"
+        android:gravity="center"
+        android:hint="@string/surname"
+        android:inputType=""
+        android:maxLength="30"
+        android:paddingHorizontal="13dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="#9A818181"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_last_name"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/ed_style"
+        android:background="@drawable/edt_style"
+        android:drawableLeft="@drawable/icon_email"
         android:gravity="center"
         android:hint="Email"
         android:maxLength="30"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="16dp"
         android:singleLine="true"
         android:textColor="@color/black"
         android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
-        app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
-        app:layout_constraintTop_toBottomOf="@id/SingUp_Tv"
-        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_first_name"
+        tools:ignore="Autofill,HardcodedText,LabelFor,RtlHardcoded,TextFields,TouchTargetSizeCheck" />
 
-    <ImageView
-        android:id="@+id/email_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:src="@drawable/icon_email"
-        app:layout_constraintBottom_toBottomOf="@id/edt_email"
-        app:layout_constraintStart_toStartOf="@id/edt_email"
-        app:layout_constraintTop_toTopOf="@id/edt_email"
-        tools:ignore="ContentDescription" />
 
     <EditText
         android:id="@+id/password_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/ed_style"
+        android:background="@drawable/edt_style"
+        android:drawableStart="@drawable/icon_password"
         android:gravity="center"
         android:hint="Password"
         android:inputType="textPassword"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="16dp"
         android:singleLine="true"
         android:textColor="@color/black"
         android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
-        app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
-        app:layout_constraintTop_toBottomOf="@id/edt_email"
-        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email"
+        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/repeat_password_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/ed_style"
+        android:background="@drawable/edt_style"
+        android:drawableStart="@drawable/icon_password"
         android:gravity="center"
         android:hint="Repeat Password"
         android:inputType="textPassword"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="16dp"
         android:singleLine="true"
         android:textColor="@color/black"
         android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
-        app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
-        app:layout_constraintTop_toBottomOf="@id/password_edt"
-        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
-
-    <ImageView
-        android:id="@+id/repeat_password_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:src="@drawable/item_password"
-        app:layout_constraintBottom_toBottomOf="@id/password_edt"
-        app:layout_constraintStart_toStartOf="@id/password_edt"
-        app:layout_constraintTop_toTopOf="@id/password_edt"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/password_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:src="@drawable/item_password"
-        app:layout_constraintBottom_toBottomOf="@id/repeat_password_edt"
-        app:layout_constraintStart_toStartOf="@id/repeat_password_edt"
-        app:layout_constraintTop_toTopOf="@id/repeat_password_edt"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_edt"
+        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/singUp_btn"
@@ -121,7 +134,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="#DC1F11"
         android:text="@string/sing_up"
-        app:layout_constraintEnd_toEndOf="@id/password_edt"
-        app:layout_constraintStart_toStartOf="@id/password_edt"
-        app:layout_constraintTop_toBottomOf="@id/repeat_password_edt" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repeat_password_edt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

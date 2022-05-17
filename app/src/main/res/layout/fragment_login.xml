@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:padding="50dp"
-    tools:context=".RegistrateFragment">
+    tools:context=".LogInFragment">
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -32,11 +33,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/ed_style"
+        android:background="@drawable/edt_style"
         android:gravity="center"
         android:hint="Email"
+        android:drawableStart="@drawable/icon_email"
+        android:paddingHorizontal="16dp"
         android:singleLine="true"
-        android:paddingHorizontal="40dp"
         android:textColor="@color/black"
         android:textColorHint="#9A818181"
         app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
@@ -44,45 +46,25 @@
         app:layout_constraintTop_toBottomOf="@id/SingUp_Tv"
         tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
 
-    <ImageView
-        android:id="@+id/email_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:src="@drawable/icon_email"
-        app:layout_constraintBottom_toBottomOf="@id/edt_email"
-        app:layout_constraintStart_toStartOf="@id/edt_email"
-        app:layout_constraintTop_toTopOf="@id/edt_email"
-        tools:ignore="ContentDescription" />
-
     <EditText
         android:id="@+id/password_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/ed_style"
+        android:background="@drawable/edt_style"
         android:gravity="center"
         android:hint="Password"
-        android:singleLine="true"
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/icon_password"
         android:maxLines="1"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="16dp"
+        android:singleLine="true"
         android:textColor="@color/black"
         android:textColorHint="#9A818181"
         app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
         app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
         app:layout_constraintTop_toBottomOf="@id/edt_email"
         tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
-
-    <ImageView
-        android:id="@+id/password_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:src="@drawable/item_password"
-        app:layout_constraintBottom_toBottomOf="@id/password_edt"
-        app:layout_constraintStart_toStartOf="@id/password_edt"
-        app:layout_constraintTop_toTopOf="@id/password_edt"
-        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/logIn_btn"
