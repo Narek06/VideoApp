@@ -5,30 +5,40 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import com.example.videoapp.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
+    lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding = FragmentProfileBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val edt_settings = view.findViewById<TextView>(R.id.setting_tv)
-        val edt_about = view.findViewById<TextView>(R.id.about_tv)
 
-        edt_settings.setOnClickListener {
+//        binding.settingTv.setOnClickListener {
+//            findNavController().navigate(
+//                ProfileFragmentDirections.actionProfileFragmentToSettingsFragment()
+//            )
+//        }
+        binding.aboutTv.setOnClickListener {
+            findNavController().navigate(
+                ProfileFragmentDirections.actionProfileFragmentToAboutFragment()
+            )
+        }
+        binding.settingsBtn.setOnClickListener {
             findNavController().navigate(
                 ProfileFragmentDirections.actionProfileFragmentToSettingsFragment()
             )
         }
-        edt_about.setOnClickListener {
+        binding.aboutBtn.setOnClickListener {
             findNavController().navigate(
                 ProfileFragmentDirections.actionProfileFragmentToAboutFragment()
             )

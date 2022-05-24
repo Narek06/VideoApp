@@ -9,7 +9,7 @@
         android:id="@+id/startFragment"
         android:name="com.example.videoapp.splashScreenFragment"
         android:label="fragment_start"
-        tools:layout="@layout/Splash_Screen" >
+        tools:layout="@layout/splash_screen_fragment" >
         <action
             android:id="@+id/action_startFragment_to_entryFragment"
             app:destination="@id/entryFragment" />
@@ -32,17 +32,17 @@
         android:label="fragment_registrate"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_registrateFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_registrateFragment_to_generalFragment"
+            app:destination="@id/generalFragment" />
     </fragment>
     <fragment
         android:id="@+id/singUpFragment"
-        android:name="com.example.videoapp.singUpFragment"
+        android:name="com.example.videoapp.SingUpFragment"
         android:label="fragment_sing_up"
         tools:layout="@layout/fragment_sing_up" >
         <action
-            android:id="@+id/action_singUpFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_singUpFragment_to_generalFragment"
+            app:destination="@id/generalFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -76,4 +76,9 @@
         android:name="com.example.videoapp.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/generalFragment"
+        android:name="com.example.videoapp.GeneralFragment"
+        android:label="fragment_general"
+        tools:layout="@layout/fragment_general" />
 </navigation>

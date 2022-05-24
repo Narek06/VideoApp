@@ -1,48 +1,43 @@
 package com.example.videoapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.videoapp.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import timber.log.Timber
 
 class LogInFragment : Fragment() {
+    lateinit var binding: FragmentLoginBinding
+
     private lateinit var auth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding = FragmentLoginBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
-        val firebaseDatabase = FirebaseFirestore.getInstance()
-        val logIn_btn = view.findViewById<Button>(R.id.logIn_btn)
 
-        val email_edt = view.findViewById<EditText>(R.id.edt_email)
-        val password_edt = view.findViewById<EditText>(R.id.password_edt)
-
-        logIn_btn.setOnClickListener {
+        binding.logInBtn.setOnClickListener {
             auth.signInWithEmailAndPassword(
-                email_edt.text.toString(),
-                password_edt.text.toString()
+                binding.edtEmail.text.toString(),
+                binding.passwordEdt.text.toString()
             ).addOnCompleteListener { Task ->
                 if (Task.isSuccessful) {
                     findNavController().navigate(
-                        LogInFragmentDirections.actionRegistrateFragmentToHomeFragment()
+                        LogInFragmentDirections.actionRegistrateFragmentToGeneralFragment()
                     )
                 } else {
                     Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()

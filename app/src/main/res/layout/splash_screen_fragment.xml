@@ -5,12 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".splashScreenFragment"
-    android:background="@drawable/background"
-
-    >
+    android:background="@drawable/background">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/logo"
         android:layout_width="326dp"
         android:layout_height="409dp"
         android:src="@drawable/logo"

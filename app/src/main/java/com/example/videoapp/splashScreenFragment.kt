@@ -14,7 +14,8 @@ import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")
 class splashScreenFragment : Fragment() {
-    val activityScope = CoroutineScope(Dispatchers.Main)
+
+    private val activityScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +30,8 @@ class splashScreenFragment : Fragment() {
         activityScope.launch {
             delay(3000)
             findNavController().navigate(
-                splashScreenFragmentDirections.actionStartFragmentToEntryFragment()
+                splashScreenFragmentDirections
+                    .actionStartFragmentToEntryFragment()
             )
         }
     }
