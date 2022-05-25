@@ -14,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.util.regex.Pattern
 
 class SingUpFragment : Fragment() {
-    lateinit var binding: FragmentSingUpBinding
+    private lateinit var binding: FragmentSingUpBinding
 
     private lateinit var auth: FirebaseAuth
     override fun onCreateView(
@@ -32,9 +32,9 @@ class SingUpFragment : Fragment() {
 
         binding.singUpBtn.setOnClickListener {
             if (binding.edtName.text.toString().isEmpty()) {
-                Toast.makeText(context, "Name is empty!", Toast.LENGTH_SHORT).show()
+                binding.edtName.error = "Name is not correct!"
             } else if (binding.edtSurname.text.toString().isEmpty()) {
-                Toast.makeText(context, "Surname is empty!", Toast.LENGTH_SHORT).show()
+                binding.edtSurname.error = "Surname is not correct!"
             } else if (validateEmail(binding.edtEmail.text.toString())) {
                 binding.edtEmail.error = "Email is not correct!"
             } else {
@@ -70,6 +70,7 @@ class SingUpFragment : Fragment() {
             }
         }
     }
+
     private fun validateEmail(email: String): Boolean {
         val emailRegex = Pattern.compile(
             "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]|[\\w-]{2,}))@"
@@ -80,10 +81,11 @@ class SingUpFragment : Fragment() {
                     + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$"
         )
         return !emailRegex.matcher(email).matches()
-    }
-    private fun validatePassword(pass: EditText):Boolean{
+    }//fun email validate
+
+    private fun validatePassword(pass: EditText): Boolean {
         val errorText = when {
-            /* Rule 1 */
+            // Rule 1
             !pass.text.contains(Regex("[A-Z]")) -> {
                 pass.error = "Password must contain one capital letter"
                 false

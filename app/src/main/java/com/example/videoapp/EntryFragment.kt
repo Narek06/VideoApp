@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.videoapp.databinding.FragmentEntryBinding
 
 class EntryFragment : Fragment() {
-    lateinit var binding: FragmentEntryBinding
+    private lateinit var binding: FragmentEntryBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +29,7 @@ class EntryFragment : Fragment() {
             )
         }
 
-        binding.registrBtn.setOnClickListener {
+        binding.singUpBtn.setOnClickListener {
             findNavController().navigate(
                 EntryFragmentDirections.actionEntryFragmentToSingUpFragment()
             )

@@ -13,7 +13,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LogInFragment : Fragment() {
-    lateinit var binding: FragmentLoginBinding
+    private lateinit var binding: FragmentLoginBinding
 
     private lateinit var auth: FirebaseAuth
 

@@ -26,8 +26,8 @@ class RecAdapter(
     override fun getItemCount(): Int = videoModelLIst.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var binding = VideoItemBinding.bind(itemView)
-        var clickLike = false
+        private var binding = VideoItemBinding.bind(itemView)
+        private var clickLike = false
 
         fun bind(videoModel: VideoModel) {
             val mediaController = MediaController(context)
@@ -45,7 +45,7 @@ class RecAdapter(
                 if (clickLike) {
                     clickLike = false
                     binding.like.setImageResource(R.drawable.icon_redlike)
-                } else if (clickLike == false) {
+                } else if (!clickLike) {
                     clickLike = true
                     binding.like.setImageResource(R.drawable.icon_like)
                 }

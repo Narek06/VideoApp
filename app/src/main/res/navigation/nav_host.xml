@@ -50,35 +50,27 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.videoapp.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.videoapp.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-        <action
             android:id="@+id/action_profileFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.videoapp.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        android:id="@+id/generalFragment"
+        android:name="com.example.videoapp.GeneralFragment"
+        android:label="fragment_general"
+        tools:layout="@layout/fragment_general" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.videoapp.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
-        android:id="@+id/generalFragment"
-        android:name="com.example.videoapp.GeneralFragment"
-        android:label="fragment_general"
-        tools:layout="@layout/fragment_general" />
+        android:id="@+id/favoriteFragment2"
+        android:name="com.example.videoapp.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>

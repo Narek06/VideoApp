@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.videoapp.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
-    lateinit var binding: FragmentProfileBinding
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,23 +22,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        binding.settingTv.setOnClickListener {
-//            findNavController().navigate(
-//                ProfileFragmentDirections.actionProfileFragmentToSettingsFragment()
-//            )
-//        }
         binding.aboutTv.setOnClickListener {
-            findNavController().navigate(
-                ProfileFragmentDirections.actionProfileFragmentToAboutFragment()
-            )
-        }
-        binding.settingsBtn.setOnClickListener {
-            findNavController().navigate(
-                ProfileFragmentDirections.actionProfileFragmentToSettingsFragment()
-            )
-        }
-        binding.aboutBtn.setOnClickListener {
             findNavController().navigate(
                 ProfileFragmentDirections.actionProfileFragmentToAboutFragment()
             )
