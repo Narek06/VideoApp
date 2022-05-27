@@ -23,9 +23,16 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.aboutTv.setOnClickListener {
-            findNavController().navigate(
-                ProfileFragmentDirections.actionProfileFragmentToAboutFragment()
-            )
+            openFragment()
         }
+        binding.aboutBtn.setOnClickListener {
+            openFragment()
+        }
+    }
+
+    private fun openFragment() {
+        val fragment = AboutFragment()
+        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView2, fragment)
+            ?.commit()
     }
 }
