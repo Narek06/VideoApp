@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.videoapp.databinding.FragmentSingUpBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -59,9 +60,8 @@ class SingUpFragment : Fragment() {
                                         Toast.makeText(context, "add data base", Toast.LENGTH_SHORT)
                                             .show()
                                     }
-                                findNavController().navigate(
-                                    SingUpFragmentDirections.actionSingUpFragmentToGeneralFragment()
-                                )
+                                Navigation.findNavController(view)
+                                    .navigate(R.id.action_singUpFragment_to_generalFragment)
                             } else {
                                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
                             }

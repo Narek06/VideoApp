@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_startFragment_to_entryFragment"
             app:destination="@id/entryFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_generalFragment"
+            app:destination="@id/generalFragment" />
     </fragment>
     <fragment
         android:id="@+id/entryFragment"
@@ -55,19 +58,14 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
+            android:id="@+id/action_profileFragment_to_entryFragment"
+            app:destination="@id/entryFragment" />
     </fragment>
     <fragment
         android:id="@+id/generalFragment"
         android:name="com.example.videoapp.GeneralFragment"
         android:label="fragment_general"
         tools:layout="@layout/fragment_general" />
-    <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.videoapp.AboutFragment"
-        android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/favoriteFragment2"
         android:name="com.example.videoapp.FavoriteFragment"

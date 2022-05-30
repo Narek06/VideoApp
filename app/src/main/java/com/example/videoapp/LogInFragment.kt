@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.videoapp.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -36,9 +37,8 @@ class LogInFragment : Fragment() {
                 binding.passwordEdt.text.toString()
             ).addOnCompleteListener { Task ->
                 if (Task.isSuccessful) {
-                    findNavController().navigate(
-                        LogInFragmentDirections.actionRegistrateFragmentToGeneralFragment()
-                    )
+                    Navigation.findNavController(view)
+                        .navigate(R.id.action_registrateFragment_to_generalFragment)
                 } else {
                     Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
                 }

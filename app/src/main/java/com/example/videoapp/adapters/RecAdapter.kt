@@ -53,8 +53,11 @@ class RecAdapter(
             videoUrl = videoModel.videoURL
             videoId = videoModel.videoId
             videoType = videoModel.videoType
+
             val mediaController = MediaController(context)
+
             firebaseAuth = FirebaseAuth.getInstance()
+
             mediaController.setAnchorView(binding.videoView)
             binding.videoView.setMediaController(mediaController)
             binding.videoView.setVideoURI(Uri.parse(videoModel.videoURL))
@@ -109,6 +112,5 @@ class RecAdapter(
                     Toast.makeText(context, "failed remove from fav", Toast.LENGTH_LONG).show()
                 }
         }
-
     }
 }

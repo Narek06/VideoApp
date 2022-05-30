@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.videoapp.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
@@ -22,17 +24,10 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.aboutTv.setOnClickListener {
-            openFragment()
-        }
-        binding.aboutBtn.setOnClickListener {
-            openFragment()
-        }
-    }
+        binding.logOut.setOnClickListener {
 
-    private fun openFragment() {
-        val fragment = AboutFragment()
-        fragmentManager?.beginTransaction()?.replace(R.id.fragmentContainerView2, fragment)
-            ?.commit()
+            FirebaseAuth.getInstance().signOut()
+            findNavController().navigate(R.id.action_profileFragment_to_entryFragment)
+        }
     }
 }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.videoapp.databinding.FragmentEntryBinding
 
@@ -24,15 +25,13 @@ class EntryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnLogin.setOnClickListener {
-            findNavController().navigate(
-                EntryFragmentDirections.actionEntryFragmentToRegistrateFragment()
-            )
+            Navigation.findNavController(view)
+                .navigate(R.id.action_entryFragment_to_registrateFragment)
         }
 
         binding.singUpBtn.setOnClickListener {
-            findNavController().navigate(
-                EntryFragmentDirections.actionEntryFragmentToSingUpFragment()
-            )
+            Navigation.findNavController(view)
+                .navigate(R.id.action_entryFragment_to_singUpFragment)
         }
 
     }
