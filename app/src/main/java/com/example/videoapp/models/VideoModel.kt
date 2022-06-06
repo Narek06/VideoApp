@@ -1,7 +1,6 @@
-package com.example.videoapp
+package com.example.videoapp.models
 
 data class VideoModel(
-    val videoType: String,
     val videoURL: String,
     val videoId: String
 )

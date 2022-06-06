@@ -1,122 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrol"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:padding="50dp"
-    tools:context=".SingUpFragment">
+    tools:context=".UI.singUp.RegisterFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.19" />
-
-    <TextView
-        android:id="@+id/SingUp_Tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sing_up"
-        android:textColor="#000"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-    <EditText
-        android:id="@+id/edt_name"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:autofillHints="name"
-        android:background="@drawable/edt_style"
-        android:drawableStart="@drawable/icon_user"
-        android:gravity="center"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        android:maxLength="30"
-        android:paddingHorizontal="13dp"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SingUp_Tv"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/edt_surname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:autofillHints=""
-        android:background="@drawable/edt_style"
-        android:drawableStart="@drawable/icon_user"
-        android:gravity="center"
-        android:hint="@string/surname"
-        android:inputType=""
-        android:maxLength="30"
-        android:paddingHorizontal="13dp"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_name"
-        tools:ignore="TouchTargetSizeCheck" />
+        <ImageView
+            android:id="@+id/User_img"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/card_backgroun_cyan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
-    <EditText
-        android:id="@+id/edt_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edt_style"
-        android:drawableLeft="@drawable/icon_email"
-        android:gravity="center"
-        android:hint="Email"
-        android:maxLength="30"
-        android:paddingHorizontal="16dp"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_surname"
-        tools:ignore="Autofill,HardcodedText,LabelFor,RtlHardcoded,TextFields,TouchTargetSizeCheck" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="505dp" />
+
+        <TextView
+            android:id="@+id/SingUp_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/sing_up"
+            android:textColor="#000"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/User_img" />
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:autofillHints="name"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/icon_user"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:paddingHorizontal="13dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#9A818181"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SingUp_Tv"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/edt_surname"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints=""
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/icon_user"
+            android:hint="@string/surname"
+            android:inputType=""
+            android:maxLength="30"
+            android:paddingHorizontal="13dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#9A818181"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_name"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/icon_email"
+            android:hint="Email"
+            android:maxLength="30"
+            android:paddingHorizontal="16dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#9A818181"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_surname"
+            tools:ignore="Autofill,HardcodedText,LabelFor,RtlHardcoded,TextFields,TouchTargetSizeCheck" />
 
 
-    <EditText
-        android:id="@+id/password_edt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edt_style"
-        android:drawableStart="@drawable/icon_password"
-        android:gravity="center"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingHorizontal="16dp"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_email"
-        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/password_edt"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/icon_password"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="16dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#9A818181"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields,TouchTargetSizeCheck" />
 
 
-    <Button
-        android:id="@+id/singUp_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#DC1F11"
-        android:text="@string/sing_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_edt" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/singup_btn"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/button_background"
+            android:text="@string/sing_up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_edt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

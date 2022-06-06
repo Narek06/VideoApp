@@ -1,79 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:padding="50dp"
-    tools:context=".LogInFragment">
+    tools:context=".UI.logIn.LogInFragment">
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <TextView
-        android:id="@+id/SingUp_Tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/log_in"
-        android:textColor="#000"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline" />
-
-    <EditText
-        android:id="@+id/edt_email"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edt_style"
-        android:gravity="center"
-        android:hint="Email"
-        android:drawableStart="@drawable/icon_email"
-        android:paddingHorizontal="16dp"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
-        app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
-        app:layout_constraintTop_toBottomOf="@id/SingUp_Tv"
-        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/password_edt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edt_style"
-        android:gravity="center"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:drawableStart="@drawable/icon_password"
-        android:maxLines="1"
-        android:paddingHorizontal="16dp"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="#9A818181"
-        app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
-        app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
-        app:layout_constraintTop_toBottomOf="@id/edt_email"
-        tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_backgroun_cyan"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.22" />
 
-    <Button
-        android:id="@+id/logIn_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#DC1F11"
-        android:text="@string/log_in"
-        app:layout_constraintEnd_toEndOf="@id/password_edt"
-        app:layout_constraintStart_toStartOf="@id/password_edt"
-        app:layout_constraintTop_toBottomOf="@id/password_edt" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/SingUp_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/log_in"
+            android:textColor="#000"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="330dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/icon_email"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="16dp"
+            android:paddingLeft="26dp"
+            android:paddingRight="26dp"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
+            app:layout_constraintTop_toBottomOf="@id/SingUp_Tv"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <EditText
+            android:id="@+id/password_edt"
+            android:layout_width="330dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/icon_password"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingHorizontal="16dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#9A818181"
+            app:layout_constraintEnd_toEndOf="@id/SingUp_Tv"
+            app:layout_constraintStart_toStartOf="@id/SingUp_Tv"
+            app:layout_constraintTop_toBottomOf="@id/edt_email"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_btn"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#DC1F11"
+            android:text="@string/log_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/password_edt"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@id/password_edt"
+            app:layout_constraintTop_toBottomOf="@id/password_edt" />
+
+        <ImageView
+            android:id="@+id/User_img"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/card_backgroun_cyan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
